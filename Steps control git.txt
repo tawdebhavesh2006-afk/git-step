@@ -1,0 +1,119 @@
+Step 1 — Open Git Bash and create the project
+git --version
+mkdir Student-Management-System
+cd Student-Management-System
+git init
+git branch -M main
+
+To verify the repository, type:
+git status
+
+Step 2 — Create the student.txt file
+cat > student.txt <<'EOF'
+Student Management System
+
+Student ID: 101
+Name: Rahul
+Course: Computer Engineering
+
+Student ID: 102
+Name: Priya
+Course: Information Technology
+EOF
+
+To display the file contents, enter:
+cat student.txt
+
+Step 3 — Stage and commit the file
+git add student.txt
+git commit -m "Initial commit"
+
+git config --global user.name tawdebhavesh2006-afk
+git config --global user.email tawdebhavesh2006@gmail.com
+
+Verify your work:
+git status
+git log --oneline
+
+Create a remote repository on GitHub
+Now connect your local project to GitHub.
+1. Open the official GitHub website: GitHub.
+2. Sign in to your account.
+3. Click the + icon and select New repository.
+4. Enter the repository name:
+   Student-Management-System
+
+GitHub will display the repository URL. Copy the HTTPS URL, which will look similar to:
+
+https://github.com/YOUR-USERNAME/Student-Management-System.git
+
+Connect your local repository to GitHub
+git remote add origin https://github.com/YOUR-USERNAME/Student-Management-System.git
+
+git remote -v
+
+Step 5 — Push the initial commit to GitHub
+Run:
+git push -u origin main
+
+Step 6 — Create a new branch named feature-update
+git branch feature-update
+git switch feature-update
+
+git branch
+
+Step 7 — Modify student.txt by adding more records
+cat >> student.txt <<'EOF'
+
+Student ID: 103
+Name: Amit
+Course: Electronics Engineering
+
+Student ID: 104
+Name: Sneha
+Course: Artificial Intelligence and Data Science
+EOF
+
+cat student.txt
+
+git status
+
+Step 8 — Commit the changes in the feature branch
+git add student.txt
+git commit -m "Add additional student records"
+git log --oneline
+
+git branch
+
+Step 9 — Merge feature-update into main
+
+A. Switch to the main branch
+git switch main
+
+B. Merge the feature branch
+git merge feature-update
+
+Verify the merged file
+Run:
+cat student.txt
+
+git status
+git branch
+
+Push the merged changes to GitHub
+git push origin main
+
+Step 10 — Display the commit history
+git log --oneline
+
+git log
+
+git log --oneline --graph --all
+
+git status
+
+**Conclusion:**
+
+Thus, the Student Management System project was successfully created using Git. A local repository was initialized, student records were added to a text file, and the changes were staged and committed. A remote repository was created on GitHub and linked to the local repository. A new branch named `feature-update` was created, additional student records were added, and the changes were committed and merged into the `main` branch. Finally, the commit history was displayed using Git commands.
+
+This practical demonstrates the basic version control operations used to track changes, maintain project history, and manage branches.
